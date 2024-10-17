@@ -1,31 +1,23 @@
 var imgSlider = document.getElementById("slider");
+var links = ["1.jpg","2.jpg" , "3.jpg" , "4.jpg", "5.jpg", "6.jpg", "7.jpg"];
+var count = 0
+function nextSlide(value){
+    if(count>6 ){
+        count = 0
+    }
+    if( count<0){
+        count = 6
+    }
+    imgSlider.setAttribute("src", links[count]);
+    if(value === '+'){
+        count++;
+        return;
+    }
+    if(value === '--'){
 
-function nextSlide(){
-    
-    imgSlider.setAttribute("src" ,"bg2.jpg");
-    var a=0
-    var imgpaths = ["bg2.jpg","bg3.jpg" , "bg2.jpg"];
-    setInterval(() => { 
-        if(a==3){
-            a=0;
-        }
-        else{
-        imgSlider.setAttribute("src" ,imgpaths[a]);
-        console.log(a);
-        a++ 
-        }
-    }, 2000);
-    
+        count--;
+        return
+    }
+    count++
 }
-
-nextSlide()
-// console.log(imgpaths[2])
-// setInterval(()=>{
-    
-//     for(var i=0; i<3 ; i++){
-//         console.log(imgpaths[i]);
-        
-//     }
-// },3000
-// );
-
+setInterval(nextSlide,3000)

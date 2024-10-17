@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+button#prevBtn {
+    left: 20px;
+    border: solid black 1px;
+    position: absolute;
+    top: 50%;
+    background: #02020299;
+    color: white;
+    padding: 10px 40px;
+    font-size: 16px;
+}
+
+
+button#nextBtn {
+     right: 20px;
+    border: solid black 1px;
+    position: absolute;
+    top: 50%;
+    background: #02020299;
+    color: white;
+    padding: 10px 40px;
+    font-size: 16px;
+}
+button#nextBtn:hover, button#prevBtn:hover{
+    background:black;
+}
+    </style>
 </head>
 <body>
     <div class="container">
-        <img id="slider" src="bg1.jpg" alt="" width="100%" >
-        <button id="prevBtn">Prev</button>
-        <button id="nextBtn" onclick="nextSlide()">Next</button>
+        <img id="slider" src="4.jpg" alt="" width="100%" height="100%" >
+        <button id="prevBtn" onClick="nextSlide('--')">Prev</button>
+        <button id="nextBtn" onClick="nextSlide('+')">Next</button>
     </div>
 
     <script src="script.js"></script>
